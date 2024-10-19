@@ -8,7 +8,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-mongoose.connect('mongodb+srv://rahul2000daksha:Rdaksha1210%40@cluster0.uncxt.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0');
+mongoose.connect('mongodb+srv://rahul2000daksha:Rdaksha1210%40@cluster0.uncxt.mongodb.net/test?retryWrites=true&w=majority&ssl=true&appName=Cluster0');
 
 mongoose.connection.on('connected', () => {
     console.log('MongoDB Connected Successfully')
