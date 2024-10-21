@@ -10,7 +10,7 @@ function App() {
 
   const getTasks = async () => {
     try {
-      const res = await axios.get('http://localhost:5000/api/tasks');
+      const res = await axios.get('https://daily-docket.onrender.com/api/tasks');
       setTasks(res.data);
     } catch (error) {
       console.error('Error Fetching Tasks', error);
@@ -23,7 +23,7 @@ function App() {
 
   const createTask = async (task) => {
     try {
-      const res = await axios.post('http://localhost:5000/api/tasks', task);
+      const res = await axios.post('https://daily-docket.onrender.com/api/tasks', task);
       setTasks([...tasks, res.data]);
     } catch (error) {
       console.error('Error Creating New Task', error);
@@ -32,7 +32,7 @@ function App() {
 
   const updateTask = async (id, updatedTask) => {
     try {
-      const res = await axios.put(`http://localhost:5000/api/tasks/${id}`, updatedTask);
+      const res = await axios.put(`https://daily-docket.onrender.com/api/tasks/${id}`, updatedTask);
       setTasks(tasks.map((task) => (task._id === id ? res.data : task)));
     } catch (error) {
       console.error('Error updating task:', error);
@@ -46,7 +46,7 @@ function App() {
 
   const deleteTask = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/api/tasks/${id}`);
+      await axios.delete(`https://daily-docket.onrender.com/api/tasks/${id}`);
       setTasks(tasks.filter((task) => (task._id !== id)));
     } catch (error) {
       console.error('Error deleting task:', error);
