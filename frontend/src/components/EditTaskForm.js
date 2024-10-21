@@ -44,7 +44,7 @@ export default function EditTaskForm({ task, updateTaskDetails, isMobile, index 
 
     const handleEdit = async () => {
         try {
-            const response = await axios.put(`http://localhost:5000/api/tasks/${task._id}`, {
+            const response = await axios.put(`https://daily-docket.onrender.com/api/tasks/${task._id}`, {
                 title,
                 dueDate,
                 completed: task.completed, // Maintain current completed status
