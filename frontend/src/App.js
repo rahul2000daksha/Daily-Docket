@@ -19,7 +19,7 @@ function App() {
 
   useEffect(() => {
     getTasks();
-  }, [tasks]);
+  }, []);
 
   const createTask = async (task) => {
     try {
