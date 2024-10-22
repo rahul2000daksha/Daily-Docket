@@ -6,7 +6,7 @@ const taskRoutes = require('./routes/tasks');
 const app = express();
 
 const corsOptions = {
-    origin: ['http://localhost:3000', 'https://animated-sundae-7a2a30.netlify.app'], // No trailing slash
+    origin: ['http://localhost:3000', 'https://admirable-cupcake-ba0a72.netlify.app'], // No trailing slash
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], // Include OPTIONS
     allowedHeaders: ['Content-Type', 'Authorization'],
     credentials: true,
