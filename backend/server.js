@@ -6,12 +6,13 @@ const taskRoutes = require('./routes/tasks');
 const app = express();
 
 const corsOptions = {
-    origin: ['http://localhost:3000', 'https://your-frontend-url.netlify.app'], // Add your frontend URLs here
-    methods: ['GET', 'POST', 'PUT', 'DELETE'], // Explicitly allow specific HTTP methods
-    allowedHeaders: ['Content-Type', 'Authorization'], // Allow specific headers
-    credentials: true, // If you need to allow cookies or authentication headers
+    origin: ['http://localhost:3000', 'https://animated-sundae-7a2a30.netlify.app'], // No trailing slash
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], // Include OPTIONS
+    allowedHeaders: ['Content-Type', 'Authorization'],
+    credentials: true,
 };
 
+// Enable CORS for all routes
 app.use(cors(corsOptions));
 app.use(express.json());
 
@@ -26,6 +27,9 @@ mongoose.connection.on('error', (err) => {
 });
 
 app.use('/api/tasks', taskRoutes);
+
+app.options('*', cors(corsOptions)); // Allow preflight requests
+
 
 const PORT = 5000;
 app.listen(PORT, () => {
